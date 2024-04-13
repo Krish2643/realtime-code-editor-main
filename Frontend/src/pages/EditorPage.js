@@ -4,6 +4,7 @@ import ACTIONS from '../Actions';
 import Client from '../components/Client';
 import Editor from '../components/Editor';
 import { initSocket } from '../socket';
+import io from 'socket.io-client'
 import {
     useLocation,
     useNavigate,
@@ -19,9 +20,10 @@ const EditorPage = () => {
     const reactNavigator = useNavigate();
     const [clients, setClients] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { 
         const init = async () => {
-            socketRef.current = await initSocket();
+            // socketRef.current = await initSocket();
+            socketRef.current = io.connect('/');
             socketRef.current.on('connect_error', (err) => handleErrors(err));
             socketRef.current.on('connect_failed', (err) => handleErrors(err));
 
