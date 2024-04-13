@@ -8,5 +8,5 @@ export const initSocket = async () => {
         timeout: 10000,
         transports: ['websocket'],
     };
-    return io('https://realtime-code-editor-g3bj.onrender.com', options);
+    return io('/', options);
 };
