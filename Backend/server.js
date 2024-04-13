@@ -14,9 +14,9 @@ const io = new Server(server);
 //     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 
-app.get('/', (req, res)=>{
-    res.send("this is home page");
-})
+// app.get('/', (req, res)=>{
+//     res.send("this is home page");
+// })
 
 app.get('/hello', (req, res)=>{
     res.send("this is hello page");
